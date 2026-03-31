@@ -1,0 +1,222 @@
+Model: text-only-4
+Device: cuda
+Output directory: /home/user2/Developer/elsa-yujiiwi/thesis-elsa/taskkk/output
+CSV Path: /home/user2/Developer/elsa-yujiiwi/thesis-elsa/taskkk/dataset/fix-review-manual-label.csv
+Images directory: /home/user2/Developer/elsa-yujiiwi/thesis-elsa/taskkk/dataset/fix-review-manual-label
+Total samples after filtering: 2178
+Overall class distribution:
+ 0 (NON-SELF-HARM); 1525 (70.0%)
+ 1 (SELF-HARM); 653 (30.0%)
+
+Train set: 1742 samples
+ 0 (NON-SELF-HARM); 1220 (70.0%)
+ 1 (SELF-HARM); 522 (30.0%)
+
+Validation set: 436 samples
+ 0 (NON-SELF-HARM); 305 (70.0%)
+ 1 (SELF-HARM); 131 (30.0%)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights: 100%|███████████████████████████████████████████████████████████████████████████████████████████| 200/200 [00:00<00:00, 2703.39it/s, Materializing param=visual_projection.weight]
+[1mCLIPVisionModelWithProjection LOAD REPORT[0m from: openai/clip-vit-base-patch32
+Key                                                          | Status     |  |
+-------------------------------------------------------------+------------+--+-
+text_model.encoder.layers.{0...11}.self_attn.v_proj.bias     | [38;5;208mUNEXPECTED[0m |  |
+text_model.final_layer_norm.bias                             | [38;5;208mUNEXPECTED[0m |  |
+text_model.encoder.layers.{0...11}.layer_norm2.weight        | [38;5;208mUNEXPECTED[0m |  |
+text_model.encoder.layers.{0...11}.mlp.fc1.bias              | [38;5;208mUNEXPECTED[0m |  |
+text_model.encoder.layers.{0...11}.self_attn.out_proj.bias   | [38;5;208mUNEXPECTED[0m |  |
+text_model.encoder.layers.{0...11}.layer_norm2.bias          | [38;5;208mUNEXPECTED[0m |  |
+text_model.encoder.layers.{0...11}.mlp.fc2.weight            | [38;5;208mUNEXPECTED[0m |  |
+text_model.encoder.layers.{0...11}.mlp.fc1.weight            | [38;5;208mUNEXPECTED[0m |  |
+text_model.encoder.layers.{0...11}.layer_norm1.weight        | [38;5;208mUNEXPECTED[0m |  |
+text_model.encoder.layers.{0...11}.self_attn.q_proj.weight   | [38;5;208mUNEXPECTED[0m |  |
+text_model.encoder.layers.{0...11}.mlp.fc2.bias              | [38;5;208mUNEXPECTED[0m |  |
+text_model.encoder.layers.{0...11}.self_attn.k_proj.bias     | [38;5;208mUNEXPECTED[0m |  |
+text_model.encoder.layers.{0...11}.self_attn.k_proj.weight   | [38;5;208mUNEXPECTED[0m |  |
+text_model.encoder.layers.{0...11}.layer_norm1.bias          | [38;5;208mUNEXPECTED[0m |  |
+text_model.encoder.layers.{0...11}.self_attn.v_proj.weight   | [38;5;208mUNEXPECTED[0m |  |
+text_model.encoder.layers.{0...11}.self_attn.q_proj.bias     | [38;5;208mUNEXPECTED[0m |  |
+text_model.encoder.layers.{0...11}.self_attn.out_proj.weight | [38;5;208mUNEXPECTED[0m |  |
+text_model.embeddings.position_ids                           | [38;5;208mUNEXPECTED[0m |  |
+vision_model.embeddings.position_ids                         | [38;5;208mUNEXPECTED[0m |  |
+logit_scale                                                  | [38;5;208mUNEXPECTED[0m |  |
+text_projection.weight                                       | [38;5;208mUNEXPECTED[0m |  |
+text_model.final_layer_norm.weight                           | [38;5;208mUNEXPECTED[0m |  |
+text_model.embeddings.token_embedding.weight                 | [38;5;208mUNEXPECTED[0m |  |
+text_model.embeddings.position_embedding.weight              | [38;5;208mUNEXPECTED[0m |  |
+
+[3mNotes:
+- [38;5;208mUNEXPECTED[0m[3m	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.[0m
+Loading weights: 100%|███████████████████████████████████████████████████████████████████████████████| 197/197 [00:00<00:00, 2222.24it/s, Materializing param=encoder.layer.11.output.dense.weight]
+[1mElectraModel LOAD REPORT[0m from: sentinet/suicidality
+Key                        | Status     |  |
+---------------------------+------------+--+-
+classifier.dense.bias      | [38;5;208mUNEXPECTED[0m |  |
+classifier.dense.weight    | [38;5;208mUNEXPECTED[0m |  |
+classifier.out_proj.bias   | [38;5;208mUNEXPECTED[0m |  |
+classifier.out_proj.weight | [38;5;208mUNEXPECTED[0m |  |
+
+[3mNotes:
+- [38;5;208mUNEXPECTED[0m[3m	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.[0m
+Initializing fusion model...
+Using text-only dims -> image(zero-vector): 512, text: 256, concat: 768
+MODEL PARAMETER
+CLIP Vision Encoder: 87,456,000 params | Trainable: 0
+CLIP Text Encoder:   0 params | Trainable: 0 (VISION-ONLY CLIP)
+ELECTRA Encoder:     108,891,648 params | Trainable: 0
+Text Projection:     197,376 params | Trainable: 197,376
+Fusion Transformer:  0 params | Trainable: 0 (NO TRANSFORMER - Late Fusion)
+Classifier:          369,602 params | Trainable: 369,602
+Total Parametes:        197,307,842
+Trainable Parameters:    566,978
+Frozen Parameters:       196,740,864
+Trainable %:         0.287%
+Scheduler active: ReduceLROnPlateau (monitor=val_loss, mode=min)
+Using Cross Entropy Loss
+
+Starting training...
+Epoch 1/24
+Training:  57%|███████████████████████████████████████████████████████████████████████████████████                                                               | 124/218 [00:06<00:04, 19.32it/s]/home/user2/miniconda3/envs/thesis-elsa/lib/python3.12/site-packages/PIL/Image.py:1034: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
+  warnings.warn(
+Training: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 218/218 [00:11<00:00, 18.79it/s]
+Evaluating: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 55/55 [00:01<00:00, 31.85it/s]
+Train Loss : 0.2245 | Train Acc : 0.9369
+Val Loss : 0.1456 | Val Acc : 0.9472
+Learning Rate : 0.000100
+Precision : 0.9286 | Recall : 0.8931 | F1 Score : 0.9105
+Confusion Matrix:
+[[296   9]
+ [ 14 117]]
+
+Best model saved (F1 Score improved to 0.9105)
+
+Epoch 2/24
+Training:  45%|██████████████████████████████████████████████████████████████████                                                                                 | 98/218 [00:05<00:06, 19.11it/s]/home/user2/miniconda3/envs/thesis-elsa/lib/python3.12/site-packages/PIL/Image.py:1034: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
+  warnings.warn(
+Training: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 218/218 [00:11<00:00, 19.30it/s]
+Evaluating: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 55/55 [00:01<00:00, 31.92it/s]
+Train Loss : 0.1925 | Train Acc : 0.9346
+Val Loss : 0.1407 | Val Acc : 0.9472
+Learning Rate : 0.000100
+Precision : 0.9355 | Recall : 0.8855 | F1 Score : 0.9098
+Confusion Matrix:
+[[297   8]
+ [ 15 116]]
+
+No improvement (1/5)
+
+Epoch 3/24
+Training:   9%|████████████▊                                                                                                                                      | 19/218 [00:00<00:10, 19.07it/s]/home/user2/miniconda3/envs/thesis-elsa/lib/python3.12/site-packages/PIL/Image.py:1034: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
+  warnings.warn(
+Training: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 218/218 [00:11<00:00, 19.33it/s]
+Evaluating: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 55/55 [00:01<00:00, 31.96it/s]
+Train Loss : 0.1920 | Train Acc : 0.9351
+Val Loss : 0.1395 | Val Acc : 0.9518
+Learning Rate : 0.000100
+Precision : 0.9661 | Recall : 0.8702 | F1 Score : 0.9157
+Confusion Matrix:
+[[301   4]
+ [ 17 114]]
+
+Best model saved (F1 Score improved to 0.9157)
+
+Epoch 4/24
+Training:  62%|██████████████████████████████████████████████████████████████████████████████████████████▍                                                       | 135/218 [00:07<00:04, 18.97it/s]/home/user2/miniconda3/envs/thesis-elsa/lib/python3.12/site-packages/PIL/Image.py:1034: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
+  warnings.warn(
+Training: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 218/218 [00:11<00:00, 19.23it/s]
+Evaluating: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 55/55 [00:01<00:00, 31.52it/s]
+Train Loss : 0.1858 | Train Acc : 0.9386
+Val Loss : 0.1443 | Val Acc : 0.9495
+Learning Rate : 0.000100
+Precision : 0.9504 | Recall : 0.8779 | F1 Score : 0.9127
+Confusion Matrix:
+[[299   6]
+ [ 16 115]]
+
+No improvement (1/5)
+
+Epoch 5/24
+Training:   9%|█████████████▍                                                                                                                                     | 20/218 [00:01<00:10, 19.04it/s]/home/user2/miniconda3/envs/thesis-elsa/lib/python3.12/site-packages/PIL/Image.py:1034: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
+  warnings.warn(
+Training: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 218/218 [00:11<00:00, 19.34it/s]
+Evaluating: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 55/55 [00:01<00:00, 31.87it/s]
+Train Loss : 0.1864 | Train Acc : 0.9369
+Val Loss : 0.1386 | Val Acc : 0.9472
+Learning Rate : 0.000100
+Precision : 0.9426 | Recall : 0.8779 | F1 Score : 0.9091
+Confusion Matrix:
+[[298   7]
+ [ 16 115]]
+
+No improvement (2/5)
+
+Epoch 6/24
+Training:  53%|█████████████████████████████████████████████████████████████████████████████                                                                     | 115/218 [00:05<00:05, 19.08it/s]/home/user2/miniconda3/envs/thesis-elsa/lib/python3.12/site-packages/PIL/Image.py:1034: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
+  warnings.warn(
+Training: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 218/218 [00:11<00:00, 19.34it/s]
+Evaluating: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 55/55 [00:01<00:00, 31.66it/s]
+Train Loss : 0.1852 | Train Acc : 0.9392
+Val Loss : 0.1428 | Val Acc : 0.9472
+Learning Rate : 0.000100
+Precision : 0.9286 | Recall : 0.8931 | F1 Score : 0.9105
+Confusion Matrix:
+[[296   9]
+ [ 14 117]]
+
+No improvement (3/5)
+
+Epoch 7/24
+Training:  38%|███████████████████████████████████████████████████████▎                                                                                           | 82/218 [00:04<00:06, 19.58it/s]/home/user2/miniconda3/envs/thesis-elsa/lib/python3.12/site-packages/PIL/Image.py:1034: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
+  warnings.warn(
+Training: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 218/218 [00:11<00:00, 19.35it/s]
+Evaluating: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 55/55 [00:01<00:00, 31.85it/s]
+Train Loss : 0.1848 | Train Acc : 0.9351
+Val Loss : 0.1425 | Val Acc : 0.9472
+Learning Rate : 0.000050
+Precision : 0.9219 | Recall : 0.9008 | F1 Score : 0.9112
+Confusion Matrix:
+[[295  10]
+ [ 13 118]]
+
+No improvement (4/5)
+
+Epoch 8/24
+Training:  24%|███████████████████████████████████▋                                                                                                               | 53/218 [00:02<00:08, 19.01it/s]/home/user2/miniconda3/envs/thesis-elsa/lib/python3.12/site-packages/PIL/Image.py:1034: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
+  warnings.warn(
+Training: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 218/218 [00:11<00:00, 19.36it/s]
+Evaluating: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 55/55 [00:01<00:00, 31.71it/s]
+Train Loss : 0.1851 | Train Acc : 0.9392
+Val Loss : 0.1410 | Val Acc : 0.9450
+Learning Rate : 0.000050
+Precision : 0.9213 | Recall : 0.8931 | F1 Score : 0.9070
+Confusion Matrix:
+[[295  10]
+ [ 14 117]]
+
+No improvement (5/5)
+Early stopping triggered after 8 epochs
+
+Training completed. Best F1 Score: 0.9157 at epoch 3
+Best model saved to: /home/user2/Developer/elsa-yujiiwi/thesis-elsa/taskkk/output/bestmodel_text-only-4.pth
+Loading best model for final evaluation...
+Evaluating: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 55/55 [00:01<00:00, 31.77it/s]
+
+Final Evaluation Results:
+Acc : 0.9518
+Precision : 0.9661
+Recall : 0.8702
+F1 Score : 0.9157
+
+Classification Report:
+               precision    recall  f1-score   support
+
+NON-SELF-HARM       0.95      0.99      0.97       305
+    SELF-HARM       0.97      0.87      0.92       131
+
+     accuracy                           0.95       436
+    macro avg       0.96      0.93      0.94       436
+ weighted avg       0.95      0.95      0.95       436
+
+
+Plots saved to /home/user2/Developer/elsa-yujiiwi/thesis-elsa/taskkk/output
+W&B model artifact uploaded.

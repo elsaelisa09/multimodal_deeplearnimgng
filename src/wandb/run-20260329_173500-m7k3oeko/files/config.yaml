@@ -1,0 +1,96 @@
+_wandb:
+    value:
+        cli_version: 0.25.0
+        e:
+            r7bgs549fe2crlo9uz5knf8dr4db47h8:
+                args:
+                    - --wandb_name
+                    - mlA-dim-4
+                codePath: taskkk/src/main.py
+                codePathLocal: main.py
+                cpu_count: 6
+                cpu_count_logical: 12
+                cudaVersion: "13.1"
+                disk:
+                    /:
+                        total: "2013991550976"
+                        used: "337082744832"
+                email: elsa.122140135@student.itera.ac.id
+                executable: /home/user2/miniconda3/envs/thesis-elsa/bin/python
+                git:
+                    commit: 672094665eb25ae290bb0102835643b4e363154d
+                    remote: https://github.com/elsaelisa09/thesis-elsa
+                gpu: NVIDIA GeForce RTX 5070
+                gpu_count: 1
+                gpu_nvidia:
+                    - architecture: Blackwell
+                      cudaCores: 6144
+                      memoryTotal: "12820938752"
+                      name: NVIDIA GeForce RTX 5070
+                      uuid: GPU-d7832b1d-717c-5028-2f28-1a57bca7d134
+                host: user-B550M-Pro-SE
+                memory:
+                    total: "33573924864"
+                os: Linux-6.17.0-19-generic-x86_64-with-glibc2.39
+                program: /home/user2/Developer/elsa-yujiiwi/thesis-elsa/taskkk/src/main.py
+                python: CPython 3.12.12
+                root: /home/user2/Developer/elsa-yujiiwi/thesis-elsa/taskkk/src
+                startedAt: "2026-03-29T10:35:00.414700Z"
+                writerId: r7bgs549fe2crlo9uz5knf8dr4db47h8
+        m: []
+        python_version: 3.12.12
+        t:
+            "1":
+                - 1
+                - 5
+                - 11
+                - 41
+                - 49
+                - 53
+                - 71
+                - 105
+            "2":
+                - 1
+                - 5
+                - 11
+                - 41
+                - 49
+                - 53
+                - 71
+                - 105
+            "3":
+                - 2
+                - 13
+                - 16
+                - 62
+            "4": 3.12.12
+            "5": 0.25.0
+            "6": 5.2.0
+            "12": 0.25.0
+            "13": linux-x86_64
+batch_size:
+    value: 16
+clip_model:
+    value: openai/clip-vit-base-patch32
+electra_model:
+    value: sentinet/suicidality
+epochs:
+    value: 24
+fusion_image_dim:
+    value: 256
+fusion_text_dim:
+    value: 512
+image_size:
+    value: 224
+learning_rate:
+    value: 0.0001
+max_len:
+    value: 128
+model_name:
+    value: mlA-dim-4
+num_classes:
+    value: 2
+patience:
+    value: 5
+seed:
+    value: 42
